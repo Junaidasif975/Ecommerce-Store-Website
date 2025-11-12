@@ -1,3 +1,4 @@
+import { navbar } from "../Data Structure/Navbar";
 import { IoIosSearch } from "react-icons/io";
 import { Menu, X } from "lucide-react"; // icons
 import { useState } from "react";
@@ -37,18 +38,18 @@ const Navbar = () => {
          {isOpen &&(
         <div className="bg-[#5e5e5e] w-full h-100 md:hidden">
           <div className="flex sm:flex-col sm:justify-center sm:items-center sm:gap-20 flex-col justify-center items-center gap-15">
-            <div className="">
-          <ul className="flex justify-center sm:gap-10 pt-6 *:text-[23px] *:cursor-pointer *:text-white *:active:text-white font-medium flex-col sm:flex-row gap-6">
+         <ul className="flex justify-center sm:gap-10 pt-6 *:text-[23px] *:cursor-pointer *:text-white *:active:text-white font-medium flex-col sm:flex-row gap-6">
+         {
+          navbar.map((value,i)=>(
+
+          
         <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        active:before:w-full before:transition-all before:duration-200">Home</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        active:before:w-full before:transition-all before:duration-200">About us</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        active:before:w-full before:transition-all before:duration-200 ">Products</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        active:before:w-full before:transition-all before:duration-200">Contact us</li>
+        active:before:w-full before:transition-all before:duration-200">
+          {value.name}
+        </li>
+        ))}
       </ul>
-      </div>
+      
       <div className="justify-end gap-5 flex">
             <button className="bg-[#75f0f7] active:bg-[#0adde8]  px-8 py-2 cursor-pointer rounded-3xl active:text-white text-gray-600 text-[20px] font-semibold active:scale-x-110 shadow-md transition-all duration-200
            ">
@@ -85,15 +86,23 @@ const Navbar = () => {
         </div>
       </div>
       <div className=" shadow-md bg-[#5f5f64] h-20 hidden md:block">
-      <ul className="flex justify-center gap-30 pt-6 *:text-[23px] *:cursor-pointer *:text-white *:hover:text-white font-medium">
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        hover:before:w-full before:transition-all before:duration-700">Home</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        hover:before:w-full before:transition-all before:duration-700">About us</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        hover:before:w-full before:transition-all before:duration-700 ">Products</li>
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
-        hover:before:w-full before:transition-all before:duration-700">Contact us</li>
+    <ul className="flex justify-center gap-30 pt-6 *:text-[23px] *:cursor-pointer *:text-white *:hover:text-white font-medium">
+        {
+          navbar.map((value,i)=>(
+
+        <li key={`${value} ${i}`} className={`relative group before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
+        hover:before:w-full before:transition-all before:duration-700`}>
+          <span>{value.name}</span>
+      {value.Product &&(
+        <div className="flex flex-col bg-gray-800 top-14 w-50 pl-5 pt-5 pb-5 gap-3 absolute invisible opacity-0
+        group-hover:visible group-hover:opacity-100 transition duration-700 *:text-white">
+          {value.Product.map((sub_val,j)=>(
+                 <span key={`${sub_val} ${j}`} className="text-black">{sub_val}</span>
+            ))}
+        </div>
+      )}
+      </li>
+            ))}
       </ul>
       </div>
     </section>

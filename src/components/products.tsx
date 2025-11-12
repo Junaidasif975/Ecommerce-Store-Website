@@ -14,7 +14,7 @@ const Feature=()=>{
         <div className="flex gap-15 justify-center flex-wrap ">
           {
             features.map((value,i)=>(
-  <div  className="flex flex-col gap-8 items-center">
+  <div key={`${value} ${i}`} className="flex flex-col gap-8 items-center">
   <img src={value.image} alt="Mobile" className="w-50 h-45 rounded-2xl active:scale-110 md:hover:scale-110 transition duration-200 md:duration-1000 object-cover object-center" />
   <div className=" w-60 h-28 flex flex-col justify-center items-center gap-3 rounded-b-2xl">
     <span className="font-bold text-[#223655] text-[24px]">{value.name}</span>

@@ -43,7 +43,7 @@ const Navbar = () => {
           navbar.map((value,i)=>(
 
           
-        <li className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
+        <li key={`${value} ${i}`} className="relative before:absolute before:top-8 before:left-0 before:h-1 before:w-0 before:bg-white
         active:before:w-full before:transition-all before:duration-200">
           {value.name}
         </li>

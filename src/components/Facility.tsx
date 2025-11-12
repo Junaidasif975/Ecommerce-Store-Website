@@ -1,27 +1,25 @@
 import { facility } from "../Data Structure/Facility";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/autoplay";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 const Facility = () => {
   return (
     <section className="font-Family-Class pt-20 md:pt-0">
       <div className="bg-[#a4a3a3] w-full py-16">
-        <Swiper
-          modules={[FreeMode, Autoplay]}
-          loop={true}
-          speed={3000}
-          freeMode={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-          }}
-          allowTouchMove={true}
-          grabCursor={true}
-          className="w-full px-6 sm:px-10"
-          spaceBetween={20}
+         <Swiper
+        modules={[FreeMode, Autoplay]}
+        loop={true}
+        speed={3000}
+        freeMode={true}
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        allowTouchMove={true}
+        grabCursor={true}
+        className="w-full px-5 sm:px-10"
+        spaceBetween={20}
        breakpoints={{
   0: { slidesPerView: 1, spaceBetween: 10 },   
   480: { slidesPerView: 1.2, spaceBetween: 15 },  
@@ -31,7 +29,7 @@ const Facility = () => {
   1280: { slidesPerView: 3.5, spaceBetween: 30 }, 
   1536: { slidesPerView: 4, spaceBetween: 35 },   
 }}
-        >
+      >
           {facility.map((value, i) => {
             const Icon = value.icon;
             return (

@@ -46,7 +46,7 @@ export const features: featturesType[] = [
 
        name:"Camera Roll",
       
-       Pricerice:"17000 rs"
+       Price:"17000 rs"
 },
 {
      image:"/assets/images/Products/product-8.webp",

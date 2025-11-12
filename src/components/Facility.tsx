@@ -1,5 +1,11 @@
 import { facility } from "../Data Structure/Facility";
 import { Swiper, SwiperSlide } from "swiper/react";
+// @ts-expect-error:Unreachable code error
+import "swiper/css";
+// @ts-expect-error:Unreachable code error
+import "swiper/css/free-mode";
+// @ts-expect-error:Unreachable code error
+import "swiper/css/autoplay";
 import { Autoplay, FreeMode } from "swiper/modules";
 
 const Facility = () => {
